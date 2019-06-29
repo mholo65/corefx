@@ -75,6 +75,14 @@ namespace System.Text.Json
             }
         }
 
+        /// <summary>
+        ///   Write the document into the provided writer as a JSON value.
+        /// </summary>
+        public void WriteTo(Utf8JsonWriter writer)
+        {
+            RootElement.WriteTo(writer);
+        }
+
         internal JsonTokenType GetJsonTokenType(int index)
         {
             CheckNotDisposed();

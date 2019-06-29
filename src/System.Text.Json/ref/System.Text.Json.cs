@@ -18,6 +18,7 @@ namespace System.Text.Json
         internal JsonDocument() { }
         public System.Text.Json.JsonElement RootElement { get { throw null; } }
         public void Dispose() { }
+        public void WriteTo(System.Text.Json.Utf8JsonWriter writer) { }
         public static System.Text.Json.JsonDocument Parse(System.Buffers.ReadOnlySequence<byte> utf8Json, System.Text.Json.JsonDocumentOptions options = default(System.Text.Json.JsonDocumentOptions)) { throw null; }
         public static System.Text.Json.JsonDocument Parse(System.IO.Stream utf8Json, System.Text.Json.JsonDocumentOptions options = default(System.Text.Json.JsonDocumentOptions)) { throw null; }
         public static System.Text.Json.JsonDocument Parse(System.ReadOnlyMemory<byte> utf8Json, System.Text.Json.JsonDocumentOptions options = default(System.Text.Json.JsonDocumentOptions)) { throw null; }
@@ -95,11 +96,7 @@ namespace System.Text.Json
         public bool ValueEquals(System.ReadOnlySpan<byte> utf8Text) { throw null; }
         public bool ValueEquals(System.ReadOnlySpan<char> text) { throw null; }
         public bool ValueEquals(string text) { throw null; }
-        public void WriteProperty(System.ReadOnlySpan<byte> utf8PropertyName, System.Text.Json.Utf8JsonWriter writer) { }
-        public void WriteProperty(System.ReadOnlySpan<char> propertyName, System.Text.Json.Utf8JsonWriter writer) { }
-        public void WriteProperty(string propertyName, System.Text.Json.Utf8JsonWriter writer) { }
-        public void WriteProperty(System.Text.Json.JsonEncodedText propertyName, System.Text.Json.Utf8JsonWriter writer) { }
-        public void WriteValue(System.Text.Json.Utf8JsonWriter writer) { }
+        public void WriteTo(System.Text.Json.Utf8JsonWriter writer) { }
         public partial struct ArrayEnumerator : System.Collections.Generic.IEnumerable<System.Text.Json.JsonElement>, System.Collections.Generic.IEnumerator<System.Text.Json.JsonElement>, System.Collections.IEnumerable, System.Collections.IEnumerator, System.IDisposable
         {
             private object _dummy;
@@ -168,6 +165,7 @@ namespace System.Text.Json
         public bool NameEquals(System.ReadOnlySpan<char> text) { throw null; }
         public bool NameEquals(string text) { throw null; }
         public override string ToString() { throw null; }
+        public void WriteTo(System.Text.Json.Utf8JsonWriter writer) { }
     }
     public partial struct JsonReaderOptions
     {

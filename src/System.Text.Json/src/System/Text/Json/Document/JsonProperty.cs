@@ -102,6 +102,14 @@ namespace System.Text.Json
             return Value.GetPropertyRawText();
         }
 
+        /// <summary>
+        ///   Write the property into the provided writer as a JSON value.
+        /// </summary>
+        public void WriteTo(Utf8JsonWriter writer)
+        {
+            Value.WriteTo(writer);
+        }
+
         private string DebuggerDisplay
             => Value.ValueKind == JsonValueKind.Undefined ? "<Undefined>" : $"\"{ToString()}\"";
     }
